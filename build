@@ -71,14 +71,14 @@ cleanup() {
 }
 trap cleanup INT QUIT TERM EXIT ILL PIPE
 
-libiconv_version=1.16
-icmake_version=9.03.01
-yodl_version=4.02.01
 ncurses_version=6.2
-kitty_version=0.25.2
+libiconv_version=1.17
+icmake_version=12.03.00
+yodl_version=4.03.03
+kitty_version=0.36.4
 termite_version=15
-kakoune_version=2020.09.01
 foot_version=1.7
+kakoune_version=2024.05.18
 zsh_doc_version=5.0.1
 
 ncurses_url=https://ftp.gnu.org/pub/gnu/ncurses/ncurses-$ncurses_version.tar.gz
@@ -93,13 +93,13 @@ zsh_url=https://github.com/zsh-users/zsh/archive/zsh-5.8.tar.gz
 zsh_doc_url=https://github.com/romkatv/zsh-bin/releases/download/v$zsh_doc_version/zsh-5.8-linux-x86_64.tar.gz
 
 ncurses_sha256=30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d
-kitty_sha256=bdcac2c8cbae7bf2e2843e500ded9f550a6a8b3e66a14565b0156d8301dfc6aa
+kitty_sha256=153665c458782e8cf38e911bcfc4531c54e1840e37da172a92be6d715be4f00b
 termite_sha256=771ecbde374ccefc40f06fb8ee0191bac1a81ab1f8f46b88288d1a9092770529
 kakoune_sha256=b1a0c61f6ce3d123878c501c01183aac5cf951ed718eb1c73949eb86b00678be
 foot_sha256=59769813ed6545c8176af291f49e281860ac70c30ceb5f72f307ec7ce9c992f4
-libiconv_sha256=e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04
-icmake_sha256=7c5c091f58f576da580238c5e3636e2038d9ecf5efb6562ae7e402910d9036e6
-yodl_sha256=0118efd6f05ddeed4910bb5e280a37a4d8e5c2f42fb2009c840b3d5c70f700f8
+libiconv_sha256=8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313
+icmake_sha256=2b0ca8fec9e28e4ce49044ef42820dfa1dfce15d93508174ff73ae5c103cdffe
+yodl_sha256=f765e80b468bbf88647bbf157a7668be0bff6ded40d8733e1ade352e1e7b3343
 zsh_sha256=db6cdfadac8d3d1f85c55c3644620cf5a0f65bf01ca26a58ff06f041bf159a5d
 zsh_doc_sha256=e1310318c6d0a14e595f71f2f393bf915758f834e50a5d101a98e246b7a137cf
 
