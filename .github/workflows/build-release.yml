@@ -1,0 +1,53 @@
+name: build-zsh-static
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  workflow_dispatch:
+
+jobs:
+  win-pack:
+    name: Build for Windows
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 {0}
+    strategy:
+      fail-fast: false
+      matrix:
+        triples:
+          - {sys: 'MSYS', arch: 'x86_64'}
+          # - {sys: 'MINGW32', arch: 'i686'}
+    steps:
+      # - name: Change autocrlf
+      #   run: git config --global core.autocrlf input
+      #   shell: bash
+
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+        # with:
+        #   ref: main
+        #   fetch-depth: 1
+        #   path: ${{ github.workspace }}/
+
+      - name: Setup msys2
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{ matrix.triples.sys }}
+          update: true
+          install: >-
+            patch
+
+      - name: Build
+        run: |
+          bash ./build -m ${{ matrix.triples.arch }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ${{ github.workspace }}/zsh-5.8-msys_nt-10.0-${{ matrix.triples.arch }}.tar.gz
+          name: zsh-msys2
+          if-no-files-found: error
+          retention-days: 3
